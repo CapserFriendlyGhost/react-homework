@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import LogoButton from "./LogoButton";
+import LogoButton from "../components/LogoButton";
 
 function Todo({ logo, setLogo }) {
   const [itemList, setItemList] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
-  const takeInputValue = (event) => {
+  const handleInputValue = (event) => {
     setInputValue(event.target.value);
   };
   const addToList = () => {
@@ -19,7 +19,7 @@ function Todo({ logo, setLogo }) {
     setItemList(itemList.filter((item) => item !== clickedItem));
   };
   const handleClickLogo = () => {
-    setLogo(!logo);
+    setLogo((logo) => !logo);
   };
 
   return (
@@ -27,7 +27,7 @@ function Todo({ logo, setLogo }) {
       <div className="todo-list-container">
         <div className="todo-list-buttons">
           <input
-            onChange={takeInputValue}
+            onChange={handleInputValue}
             value={inputValue}
             placeholder="Dopisz do listy..."
           ></input>

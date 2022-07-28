@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import image from "../components/jaro-flowers.png";
-import AddTextLogo from "./AddTextLogo";
+import image from "../assets/jaro-flowers.png";
+import AddTextLogo from "../components/AddTextLogo";
 
 function AboutMe({ setUpdateLogoText }) {
   const [inputValue, setInputValue] = useState("");

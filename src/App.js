@@ -1,45 +1,45 @@
 import "./App.css";
 // import Menu from "./Menu";
 import { useState, useEffect } from "react";
-import Logo from "./Logo";
-import MenuItem from "./Menuitem";
-import AboutMe from "./components/AboutMe";
-import CharactersList from "./components/CharactersList";
-import Todo from "./components/Todo";
-import Contact from "./components/Contact";
+import Logo from "./components/Logo";
+import MenuItem from "./components/Menuitem";
+import AboutMe from "./containers/AboutMe";
+import CharactersList from "./containers/CharactersList";
+import Todo from "./containers/Todo";
+import Contact from "./containers/Contact";
 
 function App() {
   const [logo, setLogo] = useState(true);
   const [updateLogoText, setUpdateLogoText] = useState("");
-  const [aboutMePage, setAboutMePage] = useState(false);
+  const [aboutMePage, setAboutMePage] = useState(true);
   const [charactersListPage, setCharacterListPage] = useState(false);
   const [toDoPage, setToDoPage] = useState(false);
   const [contactPage, setContactPage] = useState(false);
   const [characters, setCharacters] = useState([]);
 
   const toggleAboutMePage = () => {
-    setAboutMePage(!aboutMePage);
+    setAboutMePage((prevState) => !prevState);
     setCharacterListPage(false);
     setToDoPage(false);
     setContactPage(false);
   };
   const toggleCharactersListPage = () => {
     setAboutMePage(false);
-    setCharacterListPage(!charactersListPage);
+    setCharacterListPage((prevState) => !prevState);
     setToDoPage(false);
     setContactPage(false);
   };
   const toggleToDoPage = () => {
     setAboutMePage(false);
     setCharacterListPage(false);
-    setToDoPage(!toDoPage);
+    setToDoPage((prevState) => !prevState);
     setContactPage(false);
   };
   const toggleContactPage = () => {
     setAboutMePage(false);
     setCharacterListPage(false);
     setToDoPage(false);
-    setContactPage(!contactPage);
+    setContactPage((prevState) => !prevState);
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +48,7 @@ function App() {
       setCharacters(json);
     };
     fetchData();
-  }, [charactersListPage]);
+  }, []);
 
   return (
     <div className="App">
@@ -81,3 +81,28 @@ function App() {
 }
 
 export default App;
+
+// const toggleAboutMePage = () => {
+//   setAboutMePage(!aboutMePage);
+//   setCharacterListPage(false);
+//   setToDoPage(false);
+//   setContactPage(false);
+// };
+// const toggleCharactersListPage = () => {
+//   setAboutMePage(false);
+//   setCharacterListPage(!charactersListPage);
+//   setToDoPage(false);
+//   setContactPage(false);
+// };
+// const toggleToDoPage = () => {
+//   setAboutMePage(false);
+//   setCharacterListPage(false);
+//   setToDoPage(!toDoPage);
+//   setContactPage(false);
+// };
+// const toggleContactPage = () => {
+//   setAboutMePage(false);
+//   setCharacterListPage(false);
+//   setToDoPage(false);
+//   setContactPage(!contactPage);
+// };

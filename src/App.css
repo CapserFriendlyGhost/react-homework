@@ -8,6 +8,7 @@
   align-items: center;
 }
 .menuitem-buttons {
+  margin-right: 1vw;
   width: 30vw;
   display: flex;
   justify-content: space-between;
@@ -28,6 +29,7 @@
   color: white;
 }
 .logo {
+  margin-left: 1vw;
   font-size: 3em;
 }
 
@@ -41,7 +43,7 @@
 }
 .about-me-page-description {
   width: 50vw;
-  background-image: url("./components/comunist-background.png");
+  background-image: url("./assets/comunist-background.png");
   font-size: 2em;
 }
 .about-me-page-description-name {
