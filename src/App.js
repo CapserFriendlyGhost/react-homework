@@ -1,5 +1,4 @@
 import "./App.css";
-// import Menu from "./Menu";
 import { useState, useEffect } from "react";
 import Logo from "./components/Logo";
 import MenuItem from "./components/Menuitem";
@@ -81,28 +80,3 @@ function App() {
 }
 
 export default App;
-
-// const toggleAboutMePage = () => {
-//   setAboutMePage(!aboutMePage);
-//   setCharacterListPage(false);
-//   setToDoPage(false);
-//   setContactPage(false);
-// };
-// const toggleCharactersListPage = () => {
-//   setAboutMePage(false);
-//   setCharacterListPage(!charactersListPage);
-//   setToDoPage(false);
-//   setContactPage(false);
-// };
-// const toggleToDoPage = () => {
-//   setAboutMePage(false);
-//   setCharacterListPage(false);
-//   setToDoPage(!toDoPage);
-//   setContactPage(false);
-// };
-// const toggleContactPage = () => {
-//   setAboutMePage(false);
-//   setCharacterListPage(false);
-//   setToDoPage(false);
-//   setContactPage(!contactPage);
-// };
