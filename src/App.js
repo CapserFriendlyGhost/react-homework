@@ -6,6 +6,30 @@ import AboutMe from "./containers/AboutMe";
 import CharactersList from "./containers/CharactersList";
 import Todo from "./containers/Todo";
 import Contact from "./containers/Contact";
+import styled from "styled-components";
+
+const S = {
+  StyledNavbar: styled.div`
+    width: 95%;
+    height: 15%;
+    margin: 2% 3%;
+    display: flex;
+    flex-direction: row;
+    background-color: #d0e7ff;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #0b4076;
+    border-top: 1px solid #0b4076;
+    border-radius: 3px;
+  `,
+  StyledMenu: styled.div`
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+  `,
+};
 
 function App() {
   const [logo, setLogo] = useState(true);
@@ -17,28 +41,28 @@ function App() {
   const [characters, setCharacters] = useState([]);
 
   const toggleAboutMePage = () => {
-    setAboutMePage((prevState) => !prevState);
+    setAboutMePage(true);
     setCharacterListPage(false);
     setToDoPage(false);
     setContactPage(false);
   };
   const toggleCharactersListPage = () => {
     setAboutMePage(false);
-    setCharacterListPage((prevState) => !prevState);
+    setCharacterListPage(true);
     setToDoPage(false);
     setContactPage(false);
   };
   const toggleToDoPage = () => {
     setAboutMePage(false);
     setCharacterListPage(false);
-    setToDoPage((prevState) => !prevState);
+    setToDoPage(true);
     setContactPage(false);
   };
   const toggleContactPage = () => {
     setAboutMePage(false);
     setCharacterListPage(false);
     setToDoPage(false);
-    setContactPage((prevState) => !prevState);
+    setContactPage(true);
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -51,11 +75,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="logo-menu-bar">
+      <S.StyledNavbar>
         <Logo
           text={logo ? `Logo ${updateLogoText}` : `Nowe Logo ${updateLogoText}`}
         />
-        <div className="menuitem-buttons">
+        <S.StyledMenu>
           <MenuItem key="1" text="O mnie" onClick={toggleAboutMePage} />
           <MenuItem
             key="2"
@@ -64,8 +88,8 @@ function App() {
           />
           <MenuItem key="3" text="Todo" onClick={toggleToDoPage} />
           <MenuItem key="4" text="Kontakt" onClick={toggleContactPage} />
-        </div>
-      </div>
+        </S.StyledMenu>
+      </S.StyledNavbar>
       {aboutMePage && <AboutMe setUpdateLogoText={setUpdateLogoText} />}
       {charactersListPage && (
         <CharactersList
