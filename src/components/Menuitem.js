@@ -12,8 +12,8 @@ const S = {
 
     &:hover {
       background-color: #558fcb;
-      border-radius: 10px;
-      border-bottom: 2px solid #0b4076;
+      border-radius: 5px;
+      border-bottom: 3px solid #0b4076;
       border-top: 3px solid #0b4076;
       color: white;
       cursor: pointer;

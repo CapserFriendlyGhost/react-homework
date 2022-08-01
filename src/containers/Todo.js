@@ -1,6 +1,62 @@
 import React from "react";
 import { useState } from "react";
 import LogoButton from "../components/LogoButton";
+import styled from "styled-components";
+
+const S = {
+  StyledTodoPage: styled.div`
+    width: 95%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    & > div {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #0b4076;
+      border-radius: 30px;
+      background-color: #558fcb;
+      & :first-of-type {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        & > input {
+          width: 25%;
+          height: 20%;
+          border: 2px solid #0b4076;
+          border-radius: 5px;
+          background-color: #d0e7ff;
+        }
+        & button {
+          width: 25%;
+          height: 25%;
+          margin-left: 5px;
+          border: 2px solid #0b4076;
+          border-radius: 5px;
+          font-weight: 700;
+          background-color: #d0e7ff;
+          &:hover {
+            border: 2px solid #ffffff;
+            color: white;
+            background-color: #0b4076;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  `,
+  StyledList: styled.div`
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  `,
+};
 
 function Todo({ logo, setLogo }) {
   const [itemList, setItemList] = useState([]);
@@ -23,9 +79,9 @@ function Todo({ logo, setLogo }) {
   };
 
   return (
-    <div className="todo-list-page">
+    <S.StyledTodoPage>
       <div className="todo-list-container">
-        <div className="todo-list-buttons">
+        <div>
           <input
             onChange={handleInputValue}
             value={inputValue}
@@ -37,7 +93,7 @@ function Todo({ logo, setLogo }) {
             text={logo ? "Nowe Logo" : "Logo"}
           />
         </div>
-        <div>
+        <S.StyledList>
           {itemList.map((item) => {
             return (
               <li key={item} onClick={removeItem}>
@@ -45,9 +101,9 @@ function Todo({ logo, setLogo }) {
               </li>
             );
           })}
-        </div>
+        </S.StyledList>
       </div>
-    </div>
+    </S.StyledTodoPage>
   );
 }
 

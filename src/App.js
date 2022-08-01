@@ -18,8 +18,8 @@ const S = {
     background-color: #d0e7ff;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #0b4076;
-    border-top: 1px solid #0b4076;
+    border-bottom: 2px solid #0b4076;
+    border-top: 2px solid #0b4076;
     border-radius: 3px;
   `,
   StyledMenu: styled.div`

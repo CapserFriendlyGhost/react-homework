@@ -1,10 +1,22 @@
 import React from "react";
+import styled from "styled-components";
 
 import CharacterCard from "../components/CharacterCard";
 
+const S = {
+  StyledCharacterList: styled.div`
+    width: 95%;
+    margin: 2% 3%;
+    display: flex;
+    justify-content: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  `,
+};
+
 function CharactersList({ charactersListPage, characters }) {
   return (
-    <div className="characters-list-page">
+    <S.StyledCharacterList>
       {charactersListPage &&
         characters.results.map((character) => {
           return (
@@ -16,7 +28,7 @@ function CharactersList({ charactersListPage, characters }) {
             />
           );
         })}
-    </div>
+    </S.StyledCharacterList>
   );
 }
 
