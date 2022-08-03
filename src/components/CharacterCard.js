@@ -25,7 +25,7 @@ const S = {
   `,
 };
 
-function CharacterCard({ name, alive, image }) {
+function CharacterCard({ name, alive, image, species }) {
   return (
     <S.StyledCharacterCard>
       <div>
@@ -33,6 +33,7 @@ function CharacterCard({ name, alive, image }) {
       </div>
       <div>{name}</div>
       <div>{alive}</div>
+      <div>{species}</div>
     </S.StyledCharacterCard>
   );
 }

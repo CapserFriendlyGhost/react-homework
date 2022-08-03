@@ -9,52 +9,56 @@ const S = {
     height: 70%;
     display: flex;
     justify-content: center;
+  `,
+  StyledTodoWindow: styled.div`
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #0b4076;
+    border-radius: 30px;
+    background-color: #558fcb;
     & > div {
-      width: 30%;
-      height: 100%;
+      width: 100%;
+      height: 30%;
       display: flex;
-      flex-direction: column;
-      border: 2px solid #0b4076;
-      border-radius: 30px;
-      background-color: #558fcb;
-      & :first-of-type {
-        width: 100%;
-        height: 30%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        & > input {
-          width: 25%;
-          height: 20%;
-          border: 2px solid #0b4076;
-          border-radius: 5px;
-          background-color: #d0e7ff;
-        }
-        & button {
-          width: 25%;
-          height: 25%;
-          margin-left: 5px;
-          border: 2px solid #0b4076;
-          border-radius: 5px;
-          font-weight: 700;
-          background-color: #d0e7ff;
-          &:hover {
-            border: 2px solid #ffffff;
-            color: white;
-            background-color: #0b4076;
-            cursor: pointer;
-          }
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      & > input {
+        width: 25%;
+        height: 20%;
+        border: 2px solid #0b4076;
+        border-radius: 5px;
+        background-color: #d0e7ff;
+      }
+      & button {
+        width: 25%;
+        height: 25%;
+        margin-left: 5px;
+        border: 2px solid #0b4076;
+        border-radius: 5px;
+        font-weight: 700;
+        background-color: #d0e7ff;
+        &:hover {
+          border: 2px solid #ffffff;
+          color: white;
+          background-color: #0b4076;
+          cursor: pointer;
         }
       }
     }
   `,
-  StyledList: styled.div`
-    width: 100%;
-    height: 10%;
+  StyledList: styled.ul`
+    padding-left: 5%;
+    margin: 0;
+    width: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    & > li {
+      cursor: pointer;
+    }
   `,
 };
 
@@ -80,7 +84,7 @@ function Todo({ logo, setLogo }) {
 
   return (
     <S.StyledTodoPage>
-      <div className="todo-list-container">
+      <S.StyledTodoWindow>
         <div>
           <input
             onChange={handleInputValue}
@@ -102,7 +106,7 @@ function Todo({ logo, setLogo }) {
             );
           })}
         </S.StyledList>
-      </div>
+      </S.StyledTodoWindow>
     </S.StyledTodoPage>
   );
 }

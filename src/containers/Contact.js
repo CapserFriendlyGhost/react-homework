@@ -1,11 +1,21 @@
 import React from "react";
 import Form from "../components/Form";
+import styled from "styled-components";
+
+const S = {
+  StyledContactPage: styled.div`
+    width: 95%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+  `,
+};
 
 function Contact() {
   return (
-    <div className="contact-page">
+    <S.StyledContactPage>
       <Form />
-    </div>
+    </S.StyledContactPage>
   );
 }
 

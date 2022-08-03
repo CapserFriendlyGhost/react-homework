@@ -25,6 +25,7 @@ function CharactersList({ charactersListPage, characters }) {
               image={character.image}
               name={character.name}
               alive={character.status}
+              species={character.species}
             />
           );
         })}
