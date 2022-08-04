@@ -1,22 +1,27 @@
 import React from "react";
 import MenuItem from "./Menuitem";
 
-const buttonName = ["O mnie", "Lista Postaci", "Todo", "Kontakt"];
-function Menu() {
-  const aboutMe = () => {
-    return console.log("click");
-  };
+function Menu({
+  toggleAboutMePage,
+  toggleCharactersListPage,
+  toggleToDoPage,
+  toggleContactPage,
+  toggleDialogPage,
+  toggleComponentsPage,
+}) {
   return (
-    <div>
+    <>
+      <MenuItem key="1" text="O mnie" onClick={toggleAboutMePage} />
       <MenuItem
-        key={buttonName[0]}
-        text={buttonName[0]}
-        onClick={aboutMe}
-      ></MenuItem>
-      <MenuItem key={buttonName[1]} text={buttonName[1]}></MenuItem>
-      <MenuItem key={buttonName[2]} text={buttonName[2]}></MenuItem>
-      <MenuItem key={buttonName[3]} text={buttonName[3]}></MenuItem>
-    </div>
+        key="2"
+        text="Lista Postaci"
+        onClick={toggleCharactersListPage}
+      />
+      <MenuItem key="3" text="Todo" onClick={toggleToDoPage} />
+      <MenuItem key="4" text="Kontakt" onClick={toggleContactPage} />
+      <MenuItem key="5" text="Dialog" onClick={toggleDialogPage} />
+      <MenuItem key="6" text="Komponenty" onClick={toggleComponentsPage} />
+    </>
   );
 }
 

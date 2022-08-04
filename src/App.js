@@ -1,11 +1,13 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Logo from "./components/Logo";
-import MenuItem from "./components/Menuitem";
+import Menu from "./components/Menu";
 import AboutMe from "./containers/AboutMe";
 import CharactersList from "./containers/CharactersList";
 import Todo from "./containers/Todo";
 import Contact from "./containers/Contact";
+import Dialog from "./containers/Dialog";
+import Components from "./containers/Components";
 import styled from "styled-components";
 
 const S = {
@@ -23,7 +25,7 @@ const S = {
     border-radius: 3px;
   `,
   StyledMenu: styled.div`
-    width: 40%;
+    width: 47%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -38,6 +40,8 @@ function App() {
   const [charactersListPage, setCharacterListPage] = useState(false);
   const [toDoPage, setToDoPage] = useState(false);
   const [contactPage, setContactPage] = useState(false);
+  const [dialogPage, setDialogPage] = useState(false);
+  const [componentsPage, setComponentsPage] = useState(false);
   const [characters, setCharacters] = useState([]);
 
   const toggleAboutMePage = () => {
@@ -45,25 +49,50 @@ function App() {
     setCharacterListPage(false);
     setToDoPage(false);
     setContactPage(false);
+    setDialogPage(false);
+    setComponentsPage(false);
   };
   const toggleCharactersListPage = () => {
     setAboutMePage(false);
     setCharacterListPage(true);
     setToDoPage(false);
     setContactPage(false);
+    setDialogPage(false);
+    setComponentsPage(false);
   };
   const toggleToDoPage = () => {
     setAboutMePage(false);
     setCharacterListPage(false);
     setToDoPage(true);
     setContactPage(false);
+    setDialogPage(false);
+    setComponentsPage(false);
   };
   const toggleContactPage = () => {
     setAboutMePage(false);
     setCharacterListPage(false);
     setToDoPage(false);
     setContactPage(true);
+    setDialogPage(false);
+    setComponentsPage(false);
   };
+  const toggleDialogPage = () => {
+    setAboutMePage(false);
+    setCharacterListPage(false);
+    setToDoPage(false);
+    setContactPage(false);
+    setDialogPage(true);
+    setComponentsPage(false);
+  };
+  const toggleComponentsPage = () => {
+    setAboutMePage(false);
+    setCharacterListPage(false);
+    setToDoPage(false);
+    setContactPage(false);
+    setDialogPage(false);
+    setComponentsPage(true);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("https://rickandmortyapi.com/api/character");
@@ -80,14 +109,14 @@ function App() {
           text={logo ? `Logo ${updateLogoText}` : `Nowe Logo ${updateLogoText}`}
         />
         <S.StyledMenu>
-          <MenuItem key="1" text="O mnie" onClick={toggleAboutMePage} />
-          <MenuItem
-            key="2"
-            text="Lista Postaci"
-            onClick={toggleCharactersListPage}
+          <Menu
+            toggleAboutMePage={toggleAboutMePage}
+            toggleCharactersListPage={toggleCharactersListPage}
+            toggleToDoPage={toggleToDoPage}
+            toggleContactPage={toggleContactPage}
+            toggleDialogPage={toggleDialogPage}
+            toggleComponentsPage={toggleComponentsPage}
           />
-          <MenuItem key="3" text="Todo" onClick={toggleToDoPage} />
-          <MenuItem key="4" text="Kontakt" onClick={toggleContactPage} />
         </S.StyledMenu>
       </S.StyledNavbar>
       {aboutMePage && <AboutMe setUpdateLogoText={setUpdateLogoText} />}
@@ -99,6 +128,8 @@ function App() {
       )}
       {toDoPage && <Todo setLogo={setLogo} logo={logo} />}
       {contactPage && <Contact />}
+      {dialogPage && <Dialog />}
+      {componentsPage && <Components />}
     </div>
   );
 }
