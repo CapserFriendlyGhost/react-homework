@@ -10,13 +10,18 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { useState } from "react";
 
 export default function DialogComponent() {
-  const [open, setOpen] = React.useState(false);
-  const [age, setAge] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [language, setLanguage] = useState("");
+  const [level, setLevel] = useState("");
 
-  const handleChange = (event) => {
-    setAge(Number(event.target.value) || "");
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value || "");
+  };
+  const handleLevelChange = (event) => {
+    setLevel(event.target.value || "");
   };
 
   const handleClickOpen = () => {
@@ -37,34 +42,39 @@ export default function DialogComponent() {
         <DialogContent>
           <Box component="form" sx={{ display: "flex", flexWrap: "wrap" }}>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel htmlFor="demo-dialog-native">Age</InputLabel>
+              <InputLabel
+                htmlFor="demo-dialog-native"
+                sx={{ backgroundColor: "white", paddingRight: "5px" }}
+              >
+                Language
+              </InputLabel>
               <Select
                 native
-                value={age}
-                onChange={handleChange}
-                input={<OutlinedInput label="Age" id="demo-dialog-native" />}
+                value={language}
+                onChange={handleLanguageChange}
+                input={<OutlinedInput label="Language" />}
               >
-                <option aria-label="None" value="" />
-                <option value={10}>Ten</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
+                <option value="Html">Html</option>
+                <option value="Css">Css</option>
+                <option value="Javascript">Javascript</option>
+                <option value="React">React</option>
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="demo-dialog-select-label">Age</InputLabel>
-              <Select
-                labelId="demo-dialog-select-label"
-                id="demo-dialog-select"
-                value={age}
-                onChange={handleChange}
-                input={<OutlinedInput label="Age" />}
+              <InputLabel
+                id="demo-dialog-select-label"
+                sx={{ backgroundColor: "white", paddingRight: "5px" }}
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                Level
+              </InputLabel>
+              <Select
+                value={level}
+                onChange={handleLevelChange}
+                input={<OutlinedInput label="Level" />}
+              >
+                <MenuItem value="Junior">Junior</MenuItem>
+                <MenuItem value="Mid">Mid</MenuItem>
+                <MenuItem value="Senior">Senior</MenuItem>
               </Select>
             </FormControl>
           </Box>
@@ -74,6 +84,11 @@ export default function DialogComponent() {
           <Button onClick={handleClose}>Ok</Button>
         </DialogActions>
       </Dialog>
+      <div>
+        <h1>
+          {language} {level}
+        </h1>
+      </div>
     </div>
   );
 }
