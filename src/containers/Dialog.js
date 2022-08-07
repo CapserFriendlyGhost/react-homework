@@ -11,6 +11,16 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useState } from "react";
+import styled from "styled-components";
+
+const S = {
+  StyledDialogWrapper: styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  `,
+};
 
 export default function DialogComponent() {
   const [open, setOpen] = useState(false);
@@ -35,7 +45,7 @@ export default function DialogComponent() {
   };
 
   return (
-    <div>
+    <S.StyledDialogWrapper>
       <Button onClick={handleClickOpen}>Open select dialog</Button>
       <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
         <DialogTitle>Fill the form</DialogTitle>
@@ -49,15 +59,14 @@ export default function DialogComponent() {
                 Language
               </InputLabel>
               <Select
-                native
                 value={language}
                 onChange={handleLanguageChange}
                 input={<OutlinedInput label="Language" />}
               >
-                <option value="Html">Html</option>
-                <option value="Css">Css</option>
-                <option value="Javascript">Javascript</option>
-                <option value="React">React</option>
+                <MenuItem value="Html">Html</MenuItem>
+                <MenuItem value="Css">Css</MenuItem>
+                <MenuItem value="Javascript">Javascript</MenuItem>
+                <MenuItem value="React">React</MenuItem>
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -89,6 +98,6 @@ export default function DialogComponent() {
           {language} {level}
         </h1>
       </div>
-    </div>
+    </S.StyledDialogWrapper>
   );
 }
