@@ -9,6 +9,8 @@ import Contact from "./containers/Contact";
 import Dialog from "./containers/Dialog";
 import Components from "./containers/Components";
 import styled from "styled-components";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import FacebookIcon from "@mui/icons-material/Facebook";
 
 const S = {
   StyledNavbar: styled.div`
@@ -30,6 +32,14 @@ const S = {
     display: flex;
     justify-content: center;
     justify-content: space-around;
+  `,
+  Footer: styled.div`
+    width: 95%;
+    height: 5%;
+    margin: 1% 3%;
+    color: #0b4076;
+    display: flex;
+    justify-content: space-between;
   `,
 };
 
@@ -104,32 +114,43 @@ function App() {
 
   return (
     <div className="App">
-      <S.StyledNavbar>
-        <Logo
-          text={logo ? `Logo ${updateLogoText}` : `Nowe Logo ${updateLogoText}`}
-        />
-        <S.StyledMenu>
-          <Menu
-            toggleAboutMePage={toggleAboutMePage}
-            toggleCharactersListPage={toggleCharactersListPage}
-            toggleToDoPage={toggleToDoPage}
-            toggleContactPage={toggleContactPage}
-            toggleDialogPage={toggleDialogPage}
-            toggleComponentsPage={toggleComponentsPage}
+      <div className="App-Wrapper">
+        <S.StyledNavbar>
+          <Logo
+            text={
+              logo ? `Logo ${updateLogoText}` : `Nowe Logo ${updateLogoText}`
+            }
           />
-        </S.StyledMenu>
-      </S.StyledNavbar>
-      {aboutMePage && <AboutMe setUpdateLogoText={setUpdateLogoText} />}
-      {charactersListPage && (
-        <CharactersList
-          charactersListPage={charactersListPage}
-          characters={characters}
-        />
-      )}
-      {toDoPage && <Todo setLogo={setLogo} logo={logo} />}
-      {contactPage && <Contact />}
-      {dialogPage && <Dialog />}
-      {componentsPage && <Components />}
+          <S.StyledMenu>
+            <Menu
+              toggleAboutMePage={toggleAboutMePage}
+              toggleCharactersListPage={toggleCharactersListPage}
+              toggleToDoPage={toggleToDoPage}
+              toggleContactPage={toggleContactPage}
+              toggleDialogPage={toggleDialogPage}
+              toggleComponentsPage={toggleComponentsPage}
+            />
+          </S.StyledMenu>
+        </S.StyledNavbar>
+        {aboutMePage && <AboutMe setUpdateLogoText={setUpdateLogoText} />}
+        {charactersListPage && (
+          <CharactersList
+            charactersListPage={charactersListPage}
+            characters={characters}
+          />
+        )}
+        {toDoPage && <Todo setLogo={setLogo} logo={logo} />}
+        {contactPage && <Contact />}
+        {dialogPage && <Dialog />}
+        {componentsPage && <Components />}
+      </div>
+      <S.Footer>
+        <div>Made by CasperFriendlyGhost</div>
+        <div>
+          <GitHubIcon sx={{ fontSize: 32 }} />
+          <FacebookIcon sx={{ fontSize: 32 }} />
+        </div>
+      </S.Footer>
     </div>
   );
 }
