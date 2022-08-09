@@ -12,14 +12,14 @@ const S = {
     justify-content: center;
     justify-content: space-evenly;
     border: 2px solid #0b4076;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: #558fcb;
     font-size: 16px;
     font-weight: 600;
     & > div {
       & > img {
-        border: 2px solid #0b4076;
-        border-radius: 30px;
+        border: 1px solid #0b4076;
+        border-radius: 20px;
       }
     }
   `,

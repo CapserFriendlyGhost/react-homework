@@ -5,9 +5,10 @@ import styled from "styled-components";
 const S = {
   StyledContactPage: styled.div`
     width: 95%;
-    height: 70%;
+    height: 70vh;
     display: flex;
     justify-content: center;
+    align-items: center;
   `,
 };
 

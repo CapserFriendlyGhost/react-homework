@@ -12,7 +12,7 @@ const S = {
       width: 30%;
       height: 80%;
       border: 2px solid #0b4076;
-      border-radius: 7px;
+      border-radius: 5px;
       background-color: #d0e7ff;
     }
     & > button {
@@ -20,7 +20,7 @@ const S = {
       height: 100%;
       margin-left: 5px;
       border: 2px solid #0b4076;
-      border-radius: 7px;
+      border-radius: 5px;
       font-weight: 700;
       background-color: #d0e7ff;
       &:hover {

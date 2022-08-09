@@ -13,8 +13,8 @@ const S = {
     &:hover {
       background-color: #558fcb;
       border-radius: 5px;
-      border-bottom: 3px solid #0b4076;
-      border-top: 3px solid #0b4076;
+      border-bottom: 2px solid #0b4076;
+      border-top: 2px solid #0b4076;
       color: white;
       cursor: pointer;
     }

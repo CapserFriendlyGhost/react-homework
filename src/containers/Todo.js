@@ -6,17 +6,18 @@ import styled from "styled-components";
 const S = {
   StyledTodoPage: styled.div`
     width: 95%;
-    height: 70%;
+    height: 70vh;
     display: flex;
     justify-content: center;
+    align-items: center;
   `,
   StyledTodoWindow: styled.div`
     width: 30%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
-    border: 2px solid #0b4076;
-    border-radius: 30px;
+    border: 1px solid #0b4076;
+    border-radius: 20px;
     background-color: #558fcb;
     & > div {
       width: 100%;

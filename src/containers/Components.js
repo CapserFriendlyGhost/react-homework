@@ -23,6 +23,8 @@ const GreenSwitch = styled(Switch)(({ theme }) => ({
 
 const S = {
   StyledComponentsWrapper: styled2.div`
+    width: 95%;
+    height: 70vh;
     display: flex;
     justify-content: center;
     flex-direction: column;

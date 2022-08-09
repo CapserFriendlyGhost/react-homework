@@ -5,11 +5,11 @@ import styled from "styled-components";
 const S = {
   StyledWindowWrapper: styled.div`
     width: 30%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
-    border: 2px solid #0b4076;
-    border-radius: 30px;
+    border: 1px solid #0b4076;
+    border-radius: 20px;
     background-color: #558fcb;
     & > div:first-of-type {
       margin: 3%;
@@ -33,7 +33,7 @@ const S = {
             height: 100%;
             margin-left: 1%;
             border: 2px solid #0b4076;
-            border-radius: 7px;
+            border-radius: 5px;
             background-color: #d0e7ff;
           }
         }
@@ -43,7 +43,7 @@ const S = {
         height: 20%;
         margin-left: 9.5%;
         border: 2px solid #0b4076;
-        border-radius: 7px;
+        border-radius: 5px;
         font-weight: 700;
         background-color: #d0e7ff;
         &:hover {
@@ -67,7 +67,7 @@ const S = {
     & > div {
       margin: 2%;
       border: 2px solid #0b4076;
-      border-radius: 7px;
+      border-radius: 5px;
       background-color: #d0e7ff;
       word-wrap: break-word;
     }

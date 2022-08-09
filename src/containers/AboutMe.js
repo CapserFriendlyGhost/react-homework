@@ -7,8 +7,8 @@ import styled from "styled-components";
 const S = {
   StyledAboutMePage: styled.div`
     width: 95%;
-    height: 70%;
-    margin: 2% 3%;
+    height: 70vh;
+    margin: 0 3%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -16,8 +16,8 @@ const S = {
     & > img {
       width: 35%;
       height: 75%;
-      border-radius: 30px;
-      border: 2px solid #0b4076;
+      border-radius: 20px;
+      border: 1px solid #0b4076;
     }
   `,
   StyledDisctription: styled.div`
@@ -28,8 +28,8 @@ const S = {
     justify-content: center;
     align-content: center;
     background-color: #558fcb;
-    border-radius: 30px;
-    border: 2px solid #0b4076;
+    border-radius: 20px;
+    border: 1px solid #0b4076;
 
     & > div {
       margin: 0 1%;

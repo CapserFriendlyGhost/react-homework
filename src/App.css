@@ -5,11 +5,11 @@ body {
 
 .App {
   width: 100vw;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .App-Wrapper {
   width: 100vw;
-  height: 100vh;
 }

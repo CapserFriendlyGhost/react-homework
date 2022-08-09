@@ -15,15 +15,15 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 const S = {
   StyledNavbar: styled.div`
     width: 95%;
-    height: 15%;
-    margin: 2% 3%;
+    height: 15vh;
+    margin: 1% 3%;
     display: flex;
     flex-direction: row;
     background-color: #d0e7ff;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #0b4076;
-    border-top: 2px solid #0b4076;
+    border-bottom: 1px solid #0b4076;
+    border-top: 1px solid #0b4076;
     border-radius: 3px;
   `,
   StyledMenu: styled.div`
@@ -35,11 +35,12 @@ const S = {
   `,
   Footer: styled.div`
     width: 95%;
-    height: 5%;
+    height: 5vh;
     margin: 1% 3%;
     color: #0b4076;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   `,
 };
 
