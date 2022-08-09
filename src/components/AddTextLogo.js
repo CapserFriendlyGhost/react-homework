@@ -29,6 +29,10 @@ const S = {
         background-color: #0b4076;
         cursor: pointer;
       }
+      &:active {
+        background-color: #0b4076;
+        transform: translateY(4px);
+      }
     }
   `,
 };

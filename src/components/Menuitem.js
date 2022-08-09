@@ -18,6 +18,10 @@ const S = {
       color: white;
       cursor: pointer;
     }
+    &:active {
+      background-color: #558fcb;
+      transform: translateY(4px);
+    }
   `,
 };
 
